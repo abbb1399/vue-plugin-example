@@ -6,6 +6,8 @@
     <div id="app">{{new Date() | localeDateString}}</div>
     <!-- directive -->
     <div id="app" v-highlight>foo</div>
+    <!-- moment.js -->
+    <div>{{today}}</div>
 
   </div>
 </template>
@@ -14,13 +16,19 @@
 export default {
   data(){
     return{
-      greeting: 'hello'
+      greeting: 'hello',
+      today: null
     }
   },
   beforeMount(){
-    // prototype
+    // prototype 1
     this.greeting = this.$bold(this.greeting)
-  }
+    // prototype 2
+    this.today = this.$moment()
+  },
+
+
+
 }
 </script>
 

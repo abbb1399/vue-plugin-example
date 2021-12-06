@@ -1,6 +1,7 @@
+import moment from 'moment'
+
 export default{
-  install (Vue, options){
-    
+  install (Vue, options) {
     Vue.mixin({
       created(){
         const { greeting } = options
@@ -11,6 +12,8 @@ export default{
     Vue.prototype.$bold = text =>{
       return `<b>${text}</b>`
     }
+
+    Vue.prototype.$moment = moment
   
     Vue.filter('localeDateString', value =>{
       if (!(value instanceof Date)) {
